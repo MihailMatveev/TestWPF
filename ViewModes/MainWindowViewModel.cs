@@ -1,44 +1,31 @@
-﻿using FontAwesome.Sharp;
-using System;
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Windows;
 using System.Windows.Input;
 using TestWPF.Infastructure;
-using ICommand = System.Windows.Input.ICommand;
 
 namespace TestWPF.ViewModes
 {
     public class MainWindowViewModel:ViewModes.Base.ViewModelBase
-    {
-        private Action<object> execute;
-        private Func<object, bool> canExecute;
+    { 
 
-    
 
-        public MainWindowViewModel(Action<object> execute)
+        #region Command
+        public ICommand CloseApplicationCommand { get; set; }
+
+        private bool CanCloseApplicationCommandExecute(object p) => true;
+        private void OnCloseApplicationCommandExecute(object p)=> Application.Current.Shutdown();   
+        #endregion
+
+
+        private void InitialCommand()
         {
-            this.execute = execute;
-            this.canExecute = null;
+             CloseApplicationCommand = new LamdaCommand(OnCloseApplicationCommandExecute, CanCloseApplicationCommandExecute);
         }
 
 
-        public MainWindowViewModel(Action<object> execute, Func<object, bool> canExecute)
+       public MainWindowViewModel()
         {
-            this.execute = execute;
-            this.canExecute = canExecute;
+            InitialCommand();
         }
-
-       
-
-
-        private string _caption;
-        private IconChar _icon;
-
-        public IconChar Icon { get { return _icon; } set => Set(ref _icon, value); }
-        public string Caption { get { return _caption; } set => Set(ref _caption, value); }
-
-
 
     }
 }

@@ -13,7 +13,7 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True">
-
+    
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
@@ -121,7 +121,7 @@
                                 MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown">
 
                         <Button x:Name="btnExit"
-                                Click="btnExit_Click" 
+                                Command="{Binding CloseApplicationCommand}"
                                 Cursor="Hand"
                                 Style="{StaticResource Exit}">
                             <fa:IconImage Icon="Xmark" Style="{StaticResource CloseButtonIcon}"/>
@@ -173,7 +173,8 @@
                                     Margin="0,0,10,0">
 
                             <Button Style="{StaticResource iconButton}"
-                                    Tag="{StaticResource MaterialDesignActionDarkToggleButton}">
+                                    Tag="{StaticResource MaterialDesignActionDarkToggleButton}"
+                                    Cursor="Hand">
                                 <fa:IconImage Icon="AngleDown" Style="{StaticResource IconButtonIcon}"/>
                             </Button>
 
