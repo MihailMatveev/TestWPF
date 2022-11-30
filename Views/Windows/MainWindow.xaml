@@ -6,8 +6,9 @@
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:TestWPF"
-        xmlns:vm="clr-namespace:TestWPF.ViewModes"
-         mc:Ignorable="d"
+        xmlns:vm="clr-namespace:TestWPF.ViewModes" 
+        xmlns:local1="clr-namespace:TestWPF.Views.Windows"
+        mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1300"
         WindowStartupLocation="CenterOwner"
         WindowStyle="None"
@@ -17,6 +18,8 @@
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
+
+    
 
     <Border CornerRadius="10"
             BorderThickness="1">
@@ -64,21 +67,24 @@
 
                 </StackPanel>
 
-                <RadioButton Style="{StaticResource menuButton}">
+                <RadioButton Style="{StaticResource menuButton}"
+                             Command="{Binding ShowHomeView}" IsChecked="False">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Основаная" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
 
-                <RadioButton Style="{StaticResource menuButton}">
+                <RadioButton Style="{StaticResource menuButton}"
+                             Command="{Binding ShowSettingsView}">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="User" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Личные данные" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
+
                 </RadioButton>
 
-                <RadioButton Style="{StaticResource menuButton}">
+            <RadioButton Style="{StaticResource menuButton}">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Running" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Таблица баллов" Style="{StaticResource menuButtonText}"/>
@@ -119,7 +125,6 @@
                                 Background="Transparent"
                                 Margin="0,0,5,0"
                                 MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown">
-
                         <Button x:Name="btnExit"
                                 Command="{Binding CloseApplicationCommand}"
                                 Cursor="Hand"
@@ -200,10 +205,10 @@
                         </StackPanel>
                     </Grid>
 
-
-                    <ContentControl Content="{Binding CurrentChildView}"
-                                        Grid.Row="2"
-                                        Margin="25"/>
+                    <Frame Grid.Row="2"
+                           Content="{Binding Basic}">
+                        
+                    </Frame>
                 </Grid>
             </Border>
 

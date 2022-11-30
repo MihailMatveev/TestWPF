@@ -15,9 +15,9 @@ namespace TestWPF.Views.Windows
     /// <summary>
     /// Логика взаимодействия для Basic.xaml
     /// </summary>
-    public partial class Basic : Window
+    public partial class BasicView : Window
     {
-        public Basic()
+        public BasicView()
         {
             InitializeComponent();
         }

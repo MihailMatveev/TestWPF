@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Logo\Endurance.png" />
+  </ItemGroup>
+
+ 
+
+  <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Data\" />
     <Folder Include="Services\" />
@@ -16,6 +22,14 @@
     <PackageReference Include="FontAwesome.Sharp" Version="6.1.1" />
     <PackageReference Include="MaterialDesignColors" Version="2.0.9" />
     <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Logo\Endurance.png" />
+    <Resource Include="Logo\Force.png" />
+    <Resource Include="Logo\Speed.png" />
+    <Resource Include="Logo\UserProfile.png" />
+    <Resource Include="Logo\wr-960.jpg" />
   </ItemGroup>
 
 </Project>
