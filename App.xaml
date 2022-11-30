@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:TestWPF"
              xmlns:vm="clr-namespace:TestWPF.ViewModes"
              xmlns:view="clr-namespace:TestWPF.Views.Windows"
+             xmlns:pages="clr-namespace:TestWPF.Views.Pages"
              StartupUri="Views/Windows/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -14,6 +15,9 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
                 <ResourceDictionary Source="/Style/ButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            
+           
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

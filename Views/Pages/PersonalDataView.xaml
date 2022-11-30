@@ -14,26 +14,43 @@
             BorderThickness="1">
         <Border.Background>
             <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
-                <GradientStop Color="#5500ff"/>
-                <GradientStop Color="#0000CD"/>
+                <GradientStop Color="#79CBEE"/>
             </LinearGradientBrush>
         </Border.Background>
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="150"/>
+                <RowDefinition Height="100"/>
                 <RowDefinition/>
+                <RowDefinition Height="140"/>
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="1" Orientation="Vertical">
-                <TextBlock Text="Имя" Width="400" Height="40" FontSize="30" TextAlignment="Center" Foreground="White"/>
-                <TextBox Width="400" Height="40" BorderBrush="White"/>
+            <Border Grid.Row="1"  Height="300" Margin="140 0 0 0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="WhiteSmoke"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="80"/>
+                </Border.Effect>
+            </Border>
 
-                <TextBlock Text="Возраст" Width="400" Height="40" FontSize="30" TextAlignment="Center" Foreground="White"/>
-                <TextBox Width="400" Height="40" BorderBrush="White"/>
-
-                <TextBlock Text="Категория" Width="400" Height="40" FontSize="30" TextAlignment="Center" Foreground="White"/>
-                <ComboBox Width="400" Height="40" BorderBrush="White"/>
-            </StackPanel>
+            <Border Grid.Column="1" Grid.Row="1" CornerRadius="20" Margin="0 0 30 0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
+                        <GradientStop Color="#0000FF"/>
+                        <GradientStop Color="#4169E1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="60"/>
+                </Border.Effect>
+            </Border>
         </Grid>
     </Border>
 </Page>

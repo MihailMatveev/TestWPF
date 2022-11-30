@@ -14,8 +14,8 @@ namespace TestWPF.ViewModes
 
 
 
-        private Page basic;
-        public Page Basic
+        private ViewModelBase basic;
+        public ViewModelBase Basic
         {
             get =>basic;
             set
@@ -35,18 +35,18 @@ namespace TestWPF.ViewModes
 
 
         #region отображение страницы
-        public ICommand ShowHomeView { get; set; }
+        public ICommand ShowHomeViewCommand  { get; set; }
         private bool CanShowHomeView(object arg)=>true;
-        private void OnShowHaomeView(object obj)
+        private void OnShowHomeView(object obj)
         {
-            basic=new BasicView();
+            Basic=new BasicViewModel();
         }
 
-        public ICommand ShowSettingsView { get; set; }
+        public ICommand ShowSettingsViewCommand { get; set; }
         private bool CanShowSettingsView(object arg) => true;
         private void OnShowSettingsView(object obj)
         {
-            basic = new PersonalDataView();
+            Basic = new PersonalDataViewModel();
         }
 
         #endregion
@@ -56,9 +56,9 @@ namespace TestWPF.ViewModes
         private void InitialCommand()
         {
             CloseApplicationCommand = new LamdaCommand(OnCloseApplicationCommandExecute, CanCloseApplicationCommandExecute);
-            ShowHomeView = new LamdaCommand(OnShowHaomeView, CanShowHomeView);
-            ShowSettingsView = new LamdaCommand(OnShowSettingsView, CanShowSettingsView);
-            OnShowHaomeView(null);
+            ShowHomeViewCommand  = new LamdaCommand(OnShowHomeView, CanShowHomeView);
+            ShowSettingsViewCommand = new LamdaCommand(OnShowSettingsView, CanShowSettingsView);
+            OnShowHomeView(null);
         }
 
        
