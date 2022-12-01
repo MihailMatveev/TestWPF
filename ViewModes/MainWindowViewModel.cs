@@ -11,18 +11,15 @@ namespace TestWPF.ViewModes
     public class MainWindowViewModel:ViewModes.Base.ViewModelBase
     {
 
+        private Page basicView=new BasicView();
+        private Page personalDateView=new PersonalDataView();
+        private Page _CurrentPage=new BasicView();
 
-
-
-        private ViewModelBase basic;
-        public ViewModelBase Basic
+    
+        public Page CurrentPage
         {
-            get =>basic;
-            set
-            {
-                basic = value;
-                Set(ref basic, value);
-            }
+            get =>_CurrentPage;
+            set=> Set(ref _CurrentPage, value);
         }
 
         #region Command
@@ -39,14 +36,14 @@ namespace TestWPF.ViewModes
         private bool CanShowHomeView(object arg)=>true;
         private void OnShowHomeView(object obj)
         {
-            Basic=new BasicViewModel();
+            CurrentPage = basicView;
         }
 
         public ICommand ShowSettingsViewCommand { get; set; }
         private bool CanShowSettingsView(object arg) => true;
         private void OnShowSettingsView(object obj)
         {
-            Basic = new PersonalDataViewModel();
+            CurrentPage = personalDateView;
         }
 
         #endregion
@@ -56,8 +53,8 @@ namespace TestWPF.ViewModes
         private void InitialCommand()
         {
             CloseApplicationCommand = new LamdaCommand(OnCloseApplicationCommandExecute, CanCloseApplicationCommandExecute);
-            ShowHomeViewCommand  = new LamdaCommand(OnShowHomeView, CanShowHomeView);
-            ShowSettingsViewCommand = new LamdaCommand(OnShowSettingsView, CanShowSettingsView);
+            ShowHomeViewCommand  = new LamdaCommand(OnShowHomeView);
+            ShowSettingsViewCommand = new LamdaCommand(OnShowSettingsView);
             OnShowHomeView(null);
         }
 
