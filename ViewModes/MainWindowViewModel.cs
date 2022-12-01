@@ -16,6 +16,7 @@ namespace TestWPF.ViewModes
         private Page basicView=new BasicView();
         private Page personalDateView=new PersonalDataView();
         private Page tableDataView=new TableDataView();
+        private Page settingView=new SettingView();
         private Page _CurrentPage=new BasicView();
         #endregion
 
@@ -36,26 +37,28 @@ namespace TestWPF.ViewModes
 
         #region отображение страницы
         public ICommand ShowHomeViewCommand  { get; set; }
-        private bool CanShowHomeView(object arg)=>true;
         private void OnShowHomeView(object obj)
         {
             CurrentPage = basicView;
         }
 
-        public ICommand ShowSettingsViewCommand { get; set; }
-        private bool CanShowSettingsView(object arg) => true;
-        private void OnShowSettingsView(object obj)
+        public ICommand ShowPersonalViewCommand { get; set; }
+        private void OnShowPersonalView(object obj)
         {
             CurrentPage = personalDateView;
         }
 
         public ICommand ShowTableViewCommand { get; set; }
-        private bool CanShowTableView(object arg) => true;
         private void OnShowTableView(object obj)
         {
             CurrentPage = tableDataView;
         }
 
+        public ICommand ShowSettingsViewCommand { get; set; }
+        private void OnShowSettingView(object obj)
+        {
+            CurrentPage = settingView;
+        }
 
         #endregion
         #endregion
@@ -65,7 +68,8 @@ namespace TestWPF.ViewModes
         {
             CloseApplicationCommand = new LamdaCommand(OnCloseApplicationCommandExecute, CanCloseApplicationCommandExecute);
             ShowHomeViewCommand  = new LamdaCommand(OnShowHomeView);
-            ShowSettingsViewCommand = new LamdaCommand(OnShowSettingsView);
+            ShowPersonalViewCommand = new LamdaCommand(OnShowPersonalView);
+            ShowSettingsViewCommand = new LamdaCommand(OnShowSettingView);
             ShowTableViewCommand = new LamdaCommand(OnShowTableView);
             OnShowHomeView(null);
         }

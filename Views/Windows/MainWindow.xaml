@@ -88,7 +88,7 @@
                 </RadioButton>
 
                 <RadioButton Style="{StaticResource menuButton}"
-                             Command="{Binding Path=ShowSettingsViewCommand}">
+                             Command="{Binding Path=ShowPersonalViewCommand}">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="User" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Личные данные" Style="{StaticResource menuButtonText}"/>
@@ -104,7 +104,7 @@
                     </StackPanel>
                 </RadioButton>
 
-                <RadioButton Style="{StaticResource menuButton}">
+                <RadioButton Style="{StaticResource menuButton}" Command="{Binding ShowSettingsViewCommand}">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Настройки" Style="{StaticResource menuButtonText}"/>
