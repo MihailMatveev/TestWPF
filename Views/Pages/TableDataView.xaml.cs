@@ -8,16 +8,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TestWPF.Views.Windows
+namespace TestWPF.Views.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Basic.xaml
+    /// Логика взаимодействия для TableDataView.xaml
     /// </summary>
-    public partial class BasicView : Window
+    public partial class TableDataView : Page
     {
-        public BasicView()
+        public TableDataView()
         {
             InitializeComponent();
         }

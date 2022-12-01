@@ -96,7 +96,8 @@
 
                 </RadioButton>
 
-            <RadioButton Style="{StaticResource menuButton}">
+            <RadioButton Style="{StaticResource menuButton}"
+                         Command="{Binding ShowTableViewCommand}">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Running" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Таблица баллов" Style="{StaticResource menuButtonText}"/>
@@ -188,11 +189,7 @@
                                     VerticalAlignment="Center"
                                     Margin="0,0,10,0">
 
-                            <Button Style="{StaticResource iconButton}"
-                                    Tag="{StaticResource MaterialDesignActionDarkToggleButton}"
-                                    Cursor="Hand">
-                                <fa:IconImage Icon="AngleDown" Style="{StaticResource IconButtonIcon}"/>
-                            </Button>
+                            
 
                             <TextBlock Text="Имя пользователя"
                                            Foreground="Black"

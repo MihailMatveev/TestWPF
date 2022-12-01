@@ -11,11 +11,14 @@ namespace TestWPF.ViewModes
     public class MainWindowViewModel:ViewModes.Base.ViewModelBase
     {
 
+        #region Page
+
         private Page basicView=new BasicView();
         private Page personalDateView=new PersonalDataView();
+        private Page tableDataView=new TableDataView();
         private Page _CurrentPage=new BasicView();
+        #endregion
 
-    
         public Page CurrentPage
         {
             get =>_CurrentPage;
@@ -46,6 +49,14 @@ namespace TestWPF.ViewModes
             CurrentPage = personalDateView;
         }
 
+        public ICommand ShowTableViewCommand { get; set; }
+        private bool CanShowTableView(object arg) => true;
+        private void OnShowTableView(object obj)
+        {
+            CurrentPage = tableDataView;
+        }
+
+
         #endregion
         #endregion
 
@@ -55,6 +66,7 @@ namespace TestWPF.ViewModes
             CloseApplicationCommand = new LamdaCommand(OnCloseApplicationCommandExecute, CanCloseApplicationCommandExecute);
             ShowHomeViewCommand  = new LamdaCommand(OnShowHomeView);
             ShowSettingsViewCommand = new LamdaCommand(OnShowSettingsView);
+            ShowTableViewCommand = new LamdaCommand(OnShowTableView);
             OnShowHomeView(null);
         }
 
