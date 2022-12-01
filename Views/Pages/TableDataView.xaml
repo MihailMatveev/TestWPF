@@ -16,38 +16,61 @@
 
 
     <TabControl>
+        
         <TabItem Header="Начисление баллов">
-            <Border CornerRadius="10"
-            BorderThickness="1">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
-                        <GradientStop Color="#79CBEE"/>
-                    </LinearGradientBrush>
-                </Border.Background>
 
-                <DataGrid  Background="#79CBEE">
-                    <DataGrid.Columns >
-                        <DataGridTextColumn Header="Баллы"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Border>
+            <TabControl >
+
+                <TabItem Header="Сила">
+                    <DataGrid Background="#79CBEE">
+                        <DataGrid.Columns >
+                            <DataGridTextColumn Header="Баллы"/>
+                            <DataGridTextColumn Header="Подтягивание на перекладине"/>
+                            <DataGridTextColumn Header="Подъем переворотом на перекладине"/>
+                            <DataGridTextColumn Header="Сгибание и разгибание рук в упоре лежа"/>
+                            <DataGridTextColumn Header="Наклоны туловища вперед"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+
+                <TabItem Header="Быстрота">
+                    <DataGrid Background="#79CBEE">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Баллы"/>
+                            <DataGridTextColumn Width="*" Header="Бег на 60 м"/>
+                            <DataGridTextColumn Width="*" Header="Челночный бег 10 х 10 м"/>
+                            <DataGridTextColumn Width="*" Header="Бег на 100 м"/>
+                            <DataGridTextColumn Width="*" Header="Бег на 400 м"/>
+                            <DataGridTextColumn Width="*" Header="Бег 4 х 100 м"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+
+                <TabItem Header="Выносливость">
+                    <DataGrid Background="#79CBEE">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Баллы"/>
+                            <DataGridTextColumn Width="*" Header="Бег на 1 км"/>
+                            <DataGridTextColumn Width="*" Header="Бег на 3 км"/>
+                            <DataGridTextColumn Width="*" Header="Бег на  5 км"/>
+                            <DataGridTextColumn Width="*" Header="Марш-бросок на 5 км"/>
+                            <DataGridTextColumn Width="*" Header="Лыжная гонка на 5 км"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+
+            </TabControl>
+
         </TabItem>
 
         <TabItem Header="Оценка физической подготовленности">
-            <Border CornerRadius="10"
-            BorderThickness="1">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
-                        <GradientStop Color="#79CBEE"/>
-                    </LinearGradientBrush>
-                </Border.Background>
 
-                <DataGrid  Background="#79CBEE">
-                    <DataGrid.Columns >
-                        <DataGridTextColumn/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Border>
+            <DataGrid  Background="#79CBEE">
+                <DataGrid.Columns >
+                    <DataGridTextColumn/>
+                </DataGrid.Columns>
+            </DataGrid>
+            
         </TabItem>
     </TabControl>
    
