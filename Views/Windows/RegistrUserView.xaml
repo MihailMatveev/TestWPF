@@ -90,7 +90,7 @@
                             <RibbonTextBox Margin="0,130,0,0" Background="#4169E1" Text="Имя пользователя" TextAlignment="Center" TextBoxWidth="200"/>
                             <RibbonTextBox  Background="#4169E1" Text="Пароль" TextAlignment="Center" TextBoxWidth="200"/>
 
-                            <Button Content="Войти"  Margin="8,10,40,0" Background="#4169E1"/>
+                            <Button Content="Войти"  Margin="8,10,40,0" Background="#4169E1" Click="Button_Click"/>
 
                             <Button Background="Transparent" BorderBrush="Transparent" Margin="8,10,40,0">
                                 <TextBlock Text="Зарегистрироваться"/>

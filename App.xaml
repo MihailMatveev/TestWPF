@@ -5,7 +5,7 @@
              xmlns:vm="clr-namespace:TestWPF.ViewModes"
              xmlns:view="clr-namespace:TestWPF.Views.Windows"
              xmlns:pages="clr-namespace:TestWPF.Views.Pages"
-             StartupUri="Views/Windows/MainWindow.xaml">
+             StartupUri="Views/Windows/RegistrUserView.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
