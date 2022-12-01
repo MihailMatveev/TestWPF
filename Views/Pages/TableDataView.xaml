@@ -14,19 +14,44 @@
         <vm:TableDataViewModel/>
     </Page.DataContext>
 
-    <Border CornerRadius="10"
-            BorderThickness="1">
-        <Border.Background>
-            <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
-                <GradientStop Color="#79CBEE"/>
-            </LinearGradientBrush>
-        </Border.Background>
 
-            <DataGrid  Background="#79CBEE">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Баллы"/>
-            </DataGrid.Columns>
-        </DataGrid>
-       
-    </Border>
+    <TabControl>
+        <TabItem Header="Начисление баллов">
+            <Border CornerRadius="10"
+            BorderThickness="1">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                        <GradientStop Color="#79CBEE"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <DataGrid  Background="#79CBEE">
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Header="Баллы"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+        </TabItem>
+
+        <TabItem Header="Оценка физической подготовленности">
+            <Border CornerRadius="10"
+            BorderThickness="1">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                        <GradientStop Color="#79CBEE"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <DataGrid  Background="#79CBEE">
+                    <DataGrid.Columns >
+                        <DataGridTextColumn/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+        </TabItem>
+    </TabControl>
+   
+
+
+
 </Page>
