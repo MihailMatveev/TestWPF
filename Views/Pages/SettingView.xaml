@@ -51,13 +51,15 @@
 
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="240"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Margin="10">
-                        <TextBlock Text="Имя" FontSize="25" Margin="10 10 0 10" TextAlignment="Right"/>
-                        <TextBlock Text="Фамилия" FontSize="25" Margin="10 10 0 10" TextAlignment="Right"/>
+                        <TextBlock Text="Имя" FontSize="25" Margin="10 15 0 10" TextAlignment="Right"/>
+                        <TextBlock Text="Фамилия" FontSize="25" Margin="10 15 0 10" TextAlignment="Right"/>
+                        <TextBlock Text="Изменить пароль" FontSize="25" Margin="10 15 0 10" TextAlignment="Right"/>
+                        <TextBlock Text="Email" FontSize="25" Margin="10 15 0 10" TextAlignment="Right"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Margin="10">
@@ -68,7 +70,13 @@
                         <TextBox Width="400" Background="LightBlue" 
                                  Opacity="0.8" TextAlignment="Left" 
                                  FontSize="25" Foreground="Black" Margin="10"/>
-                        
+                        <TextBox Width="400" Background="LightBlue" 
+                                 Opacity="0.8" TextAlignment="Left" 
+                                 FontSize="25" Foreground="Black" Margin="10"/>
+                        <TextBox Width="400" Background="LightBlue" 
+                                 Opacity="0.8" TextAlignment="Left" 
+                                 FontSize="25" Foreground="Black" Margin="10"/>
+
                     </StackPanel>
                 </Grid>
                 
