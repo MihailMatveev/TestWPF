@@ -13,6 +13,8 @@
         <vm:BasicViewModel/>
     </Page.DataContext>
 
+    
+    
     <Border CornerRadius="10"
             BorderThickness="1">
         <Border.Background>
@@ -30,6 +32,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="7*"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
 
@@ -37,11 +40,16 @@
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="60"/>
                 </Border.Effect>
-                
                 <StackPanel Margin="0 9">
                     <Image Source="/Logo/Force.png" Height="120"/>
-                    <ComboBox Margin="0,10,0,0" Width="100" Height="50"/>
-                    <TextBox FontSize="15" Margin="0,10,0,0" Width="100"  TextAlignment="Center"/>
+                    <ComboBox Margin="0,10,0,0" Width="300" Height="50" VerticalAlignment="Center"
+                              FontSize="10">
+                        <TextBlock Text="Подтягивание на перекладине" FontSize="15"/>
+                        <TextBlock Text="Подъем переворотом на перекладине" FontSize="15"/>
+                        <TextBlock Text="Сгибание и разгибание рук в упоре лежа" FontSize="15"/>
+                        <TextBlock Text="Наклоны туловища вперед" FontSize="15"/>
+                    </ComboBox>
+                    <TextBox Text="{Binding Path=Force_result}" FontSize="20" Margin="0,10,0,0"  Width="100"  TextAlignment="Center"/>
                 </StackPanel>
             </Border>
 
@@ -53,7 +61,7 @@
                 <StackPanel Margin="0 9">
                     <Image Source="/Logo/Speed.png" Height="120"/>
                     <ComboBox Margin="0,10,0,0" Height="50" Width="100" />
-                    <TextBox FontSize="15" Margin="0,10,0,0"  Width="100"  TextAlignment="Center"/>
+                    <TextBox Text="{Binding Path=Speed_result}" FontSize="20" Margin="0,10,0,0"  Width="100"  TextAlignment="Center"/>
                 </StackPanel>
             </Border>
             
@@ -65,10 +73,15 @@
                 <StackPanel Margin="0 9">
                     <Image Source="/Logo/Endurance.png" Height="120"/>
                     <ComboBox Margin="0,10,0,0" Width="100" Height="50"/>
-                    <TextBox FontSize="15" Margin="0,10,0,0"  Width="100"  TextAlignment="Center"/>
+                    <TextBox Text="{Binding Path=Endurance_result}" FontSize="20" Margin="0,10,0,0"  Width="100"  TextAlignment="Center"/>
                 </StackPanel>
             </Border>
 
+            <Label Grid.Row="2" Content="{Binding Path=Force_Ball}" VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center" FontSize="30"/>
+
+            <Label Grid.Row="3" Grid.Column="1" Content="{Binding Path=Sum_Ball}" VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center" FontSize="75"/>
         </Grid>
 
     </Border>
