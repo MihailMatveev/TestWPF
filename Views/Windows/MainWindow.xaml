@@ -87,14 +87,7 @@
                     </StackPanel>
                 </RadioButton>
 
-                <RadioButton Style="{StaticResource menuButton}"
-                             Command="{Binding Path=ShowPersonalViewCommand}">
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="User" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Личные данные" Style="{StaticResource menuButtonText}"/>
-                    </StackPanel>
-
-                </RadioButton>
+             
 
             <RadioButton Style="{StaticResource menuButton}"
                          Command="{Binding ShowTableViewCommand}">
