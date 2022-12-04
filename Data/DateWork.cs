@@ -40,11 +40,11 @@ namespace TestWPF.Data
         static public string SearchBall(string result)
         {
             ConnectDate();
-
-            string sqlExpression = $"SELECT Ball FROM [NFP].[dbo].[№4] WHERE Result={result}";
+            string sqlExpression = $"SELECT * FROM [NFP].[dbo].[№4] WHERE Result={result}";
 
             SqlCommand command = new SqlCommand(sqlExpression, connection);
-            string ball = Convert.ToString(command.ExecuteNonQuery());
+
+            string ball =Convert.ToString(command.ExecuteNonQuery());
             return ball;
         }
     }
