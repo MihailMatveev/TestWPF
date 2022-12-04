@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
+using TestWPF.Data;
 using TestWPF.Infastructure;
 
 namespace TestWPF.ViewModes
@@ -19,6 +20,7 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref force_result, value);
+                Force_Ball = DateWork.SearchBall(force_result);
             }
         }
 
@@ -44,6 +46,7 @@ namespace TestWPF.ViewModes
 
         #endregion
         #region Ball
+
         private string force_ball;
         public string Force_Ball
         {
@@ -99,6 +102,7 @@ namespace TestWPF.ViewModes
         public BasicViewModel()
         {
             CloseApplicationCommand = new LamdaCommand(OnCloseApplicationCommandExecute, CanCloseApplicationCommandExecute);
+
         }
     }
 }

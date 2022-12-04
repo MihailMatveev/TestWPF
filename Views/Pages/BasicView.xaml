@@ -9,6 +9,7 @@
       Height="500" Width="1000"
       Background="Transparent">
 
+    
     <Page.DataContext>
         <vm:BasicViewModel/>
     </Page.DataContext>
