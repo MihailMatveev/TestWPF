@@ -19,7 +19,6 @@ namespace TestWPF.Data
             {
                 // Открываем подключение
                 connection.Open();
-                MessageBox.Show("Соединение открыто");
             }
             catch (SqlException ex)
             {
@@ -44,7 +43,8 @@ namespace TestWPF.Data
 
             SqlCommand command = new SqlCommand(sqlExpression, connection);
 
-            string ball =Convert.ToString(command.ExecuteNonQuery());
+            string ball =Convert.ToString(command.ExecuteScalar());
+            connection.Close();
             return ball;
         }
     }

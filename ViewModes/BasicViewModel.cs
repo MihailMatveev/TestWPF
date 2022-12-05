@@ -31,6 +31,7 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref speed_result, value);
+                Speed_Ball = DateWork.SearchBall(speed_result);
             }
         }
 
@@ -41,6 +42,7 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref endurance_result, value);
+                Endurance_Ball = DateWork.SearchBall(endurance_result);
             }
         }
 
