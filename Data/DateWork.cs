@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Windows;
+using TestWPF.Models;
 
 namespace TestWPF.Data
 {
@@ -46,6 +47,30 @@ namespace TestWPF.Data
             string ball =Convert.ToString(command.ExecuteScalar());
             connection.Close();
             return ball;
+        }
+
+        static public List<Name_Exercises> SearchName_Exercises()
+        {
+            List<Name_Exercises> name_Exercises = new List<Name_Exercises>();
+
+            ConnectDate();
+            string sqlExpression = $"SELECT * FROM [NFP].[dbo].[Name_Exercises] ";
+            SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+            using(SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    name_Exercises.Add(new Name_Exercises()
+                    {
+                        Name = reader.GetString("name"),
+                        Number = reader.GetString("number")
+                    });
+                }
+            }
+            connection.Close();
+                  
+            return name_Exercises;
         }
     }
 }

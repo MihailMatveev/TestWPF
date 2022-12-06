@@ -5,11 +5,23 @@ using System.Windows;
 using System.Windows.Input;
 using TestWPF.Data;
 using TestWPF.Infastructure;
+using TestWPF.Models;
 
 namespace TestWPF.ViewModes
 {
     public class BasicViewModel:ViewModes.Base.ViewModelBase
     {
+        private List<Name_Exercises> name_exercises = DateWork.SearchName_Exercises();
+
+        public List<Name_Exercises> Name_Exercises
+        {
+            get { return name_exercises; }
+            set
+            {
+                Set(ref name_exercises, value);
+            } 
+               
+        }
         #region Fields
         #region result
 
@@ -104,7 +116,6 @@ namespace TestWPF.ViewModes
         public BasicViewModel()
         {
             CloseApplicationCommand = new LamdaCommand(OnCloseApplicationCommandExecute, CanCloseApplicationCommandExecute);
-
         }
     }
 }
