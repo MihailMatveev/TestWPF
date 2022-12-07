@@ -15,7 +15,7 @@ namespace TestWPF.ViewModes
         #region Page
 
         private Page basicView=new BasicView();
-        private Page personalDateView=new PersonalDataView();
+        private Page methodologyView=new MethodologyView();
         private Page tableDataView=new TableDataView();
         private Page settingView=new SettingView();
         private Page _CurrentPage=new BasicView();
@@ -43,10 +43,10 @@ namespace TestWPF.ViewModes
             CurrentPage = basicView;
         }
 
-        public ICommand ShowPersonalViewCommand { get; set; }
-        private void OnShowPersonalView(object obj)
+        public ICommand ShowMethodologyViewViewCommand { get; set; }
+        private void OnShowMethodologyViewlView(object obj)
         {
-            CurrentPage = personalDateView;
+            CurrentPage = methodologyView;
         }
 
         public ICommand ShowTableViewCommand { get; set; }
@@ -68,8 +68,9 @@ namespace TestWPF.ViewModes
         private void InitialCommand()
         {
             CloseApplicationCommand = new LamdaCommand(OnCloseApplicationCommandExecute, CanCloseApplicationCommandExecute);
+
             ShowHomeViewCommand  = new LamdaCommand(OnShowHomeView);
-            ShowPersonalViewCommand = new LamdaCommand(OnShowPersonalView);
+            ShowMethodologyViewViewCommand = new LamdaCommand(OnShowMethodologyViewlView);
             ShowSettingsViewCommand = new LamdaCommand(OnShowSettingView);
             ShowTableViewCommand = new LamdaCommand(OnShowTableView);
             OnShowHomeView(null);

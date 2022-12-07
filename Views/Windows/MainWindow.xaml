@@ -9,7 +9,7 @@
         xmlns:vm="clr-namespace:TestWPF.ViewModes" 
         xmlns:pages="clr-namespace:TestWPF.Views.Pages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1300"
+        Title="MainWindow" Height="700" Width="1350"
         WindowStartupLocation="CenterOwner"
         WindowStyle="None"
         Background="Transparent"
@@ -94,6 +94,14 @@
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Running" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Таблица баллов" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+
+                <RadioButton Style="{StaticResource menuButton}"
+                         Command="{Binding ShowMethodologyViewViewCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Book" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Методика" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
 

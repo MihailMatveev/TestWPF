@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace TestWPF.Views.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для PersonalDataView.xaml
+    /// Логика взаимодействия для MethodologyView.xaml
     /// </summary>
-    public partial class PersonalDataView : Page
+    public partial class MethodologyView : Page
     {
-        public PersonalDataView()
+        public MethodologyView()
         {
             InitializeComponent();
         }
