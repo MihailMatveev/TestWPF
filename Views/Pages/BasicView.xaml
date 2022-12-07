@@ -107,6 +107,7 @@
 
             <Label Grid.Row="3" Grid.Column="1" Content="{Binding Path=Sum_Ball}" VerticalContentAlignment="Center"
                    HorizontalContentAlignment="Center" FontSize="75"/>
+      
         </Grid>
 
     </Border>
