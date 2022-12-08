@@ -11,7 +11,7 @@ namespace TestWPF.ViewModes
 {
     public class BasicViewModel:ViewModes.Base.ViewModelBase
     {
-        private List<Name_Exercises> name_exercises = DateWork.SearchName_Exercises();
+        private List<Name_Exercises> name_exercises /*= DateWork.SearchName_Exercises()*/;
 
         public List<Name_Exercises> Name_Exercises
         {
@@ -106,16 +106,15 @@ namespace TestWPF.ViewModes
         #endregion
         #endregion
 
-        #region Command
+        #region Commands
         public ICommand CloseApplicationCommand { get; set; }
 
-        private bool CanCloseApplicationCommandExecute(object p) => true;
         private void OnCloseApplicationCommandExecute(object p) => Application.Current.Shutdown();
         #endregion
        
         public BasicViewModel()
         {
-            CloseApplicationCommand = new LamdaCommand(OnCloseApplicationCommandExecute, CanCloseApplicationCommandExecute);
+            CloseApplicationCommand = new LamdaCommand(OnCloseApplicationCommandExecute);
         }
     }
 }
