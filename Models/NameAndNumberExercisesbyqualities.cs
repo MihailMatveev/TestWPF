@@ -7,30 +7,31 @@ namespace TestWPF.Models
     public static class NameAndNumberExercisesbyqualities
     {
         #region Force
-        private static Dictionary<string, string> _ForceExercisesNameAndNumber = new Dictionary<string, string>()
+        private static List<Name_Exercises> _ForceExercisesNameAndNumber = new List<Name_Exercises>()
         {
-            {"1","Сгибание рагибание рук в упоре лежа" },
-            {"2","Наклоны туловища вперед" },
-            {"4","Подтягивание на перекладине" },
-            {"5","Поднимание ног к перекладине" },
-            {"6","Подъем переворотом на перекладине" },
-            {"7","Подъем силой на перекладине" },
-            {"8(1)","Жим штанги лежа,вес штанги 70 кг \n до 70 кг" },
-            {"8(2)","Жим штанги лежа,вес штанги 70 кг \n свыше 70 кг" },
-            {"9","Сгибание и разгибание рук в упоре на брусьях" },
-            {"10","Угол в упоре на брусьях" },
-            {"11(1)","Рывок гири, вес 24 кг \n до 70 кг" },
-            {"11(2)","рывок гири, вес 24 кг \n свыше 70 кг" },
-            {"12(1)","толчок двух гирь, вес 24 кг \n до 70 кг" },
-            {"12(2)","толчок двух гирь, вес 24 кг \n свыше 70 кг" },
-            {"13(1)","толчок двух гирь, вес 24 кг \n до 70 кг" },
-            {"13(2)","толчок двух гирь, вес 24 кг \n свыше 70 кг" }
+            new Name_Exercises() {Number="1",Name="Сгибание рагибание рук в упоре лежа" },
+               new Name_Exercises() {Number="2",Name="Наклоны туловища вперед" },
+               new Name_Exercises() {Number="4",Name= "Подтягивание на перекладине" },
+               new Name_Exercises() {Number="5",Name= "Поднимание ног к перекладине" },
+              new Name_Exercises() {Number= "6",Name= "Подъем переворотом на перекладине" },
+               new Name_Exercises() {Number="7",Name= "Подъем силой на перекладине" },
+                new Name_Exercises() {Number="8(1)",Name= "Жим штанги лежа,вес штанги 70 кг \n до 70 кг" },
+                 new Name_Exercises() {Number="8(2)",Name= "Жим штанги лежа,вес штанги 70 кг \n свыше 70 кг" },
+                 new Name_Exercises() {Number="9",Name = "Сгибание и разгибание рук в упоре на брусьях" },
+                 new Name_Exercises() {Number="10",Name= "Угол в упоре на брусьях" },
+                 new Name_Exercises() {Number="11(1)",Name= "Рывок гири, вес 24 кг \n до 70 кг" },
+                 new Name_Exercises() {Number="11(2)",Name= "рывок гири, вес 24 кг \n свыше 70 кг" },
+                 new Name_Exercises() {Number="12(1)",Name= "толчок двух гирь, вес 24 кг \n до 70 кг" },
+                 new Name_Exercises() {Number="12(2)",Name= "толчок двух гирь, вес 24 кг \n свыше 70 кг" },
+                 new Name_Exercises() {Number="13(1)",Name= "толчок двух гирь, вес 24 кг \n до 70 кг" },
+                 new Name_Exercises() {Number="13(2)",Name= "толчок двух гирь, вес 24 кг \n свыше 70 кг" }
         };
+       
 
         /// <summary>
         /// Название упражнений на СИЛУ. номер и название
         /// </summary>
-        public static Dictionary<string, string> ForceExercisesNameAndNumber { get => _ForceExercisesNameAndNumber; }
+        public static List<Name_Exercises> ForceExercisesNameAndNumber { get => _ForceExercisesNameAndNumber; }
         #endregion
 
 

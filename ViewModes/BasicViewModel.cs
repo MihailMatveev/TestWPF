@@ -11,14 +11,14 @@ namespace TestWPF.ViewModes
 {
     public class BasicViewModel:ViewModes.Base.ViewModelBase
     {
-        private List<Name_Exercises> name_exercises /*= DateWork.SearchName_Exercises()*/;
+        private List<Name_Exercises> _Force =NameAndNumberExercisesbyqualities.ForceExercisesNameAndNumber;
 
-        public List<Name_Exercises> Name_Exercises
+        public List<Name_Exercises> Force
         {
-            get { return name_exercises; }
+            get { return _Force; }
             set
             {
-                Set(ref name_exercises, value);
+                Set(ref _Force, value);
             } 
                
         }
