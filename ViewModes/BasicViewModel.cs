@@ -139,6 +139,14 @@ namespace TestWPF.ViewModes
                 || DateWork.EnduranceSearchBall(endurance_result, SelectedEndurance)=="")
             {
                 string[] resultMinAndSec=endurance_result.Split('.');
+                if ((Convert.ToInt32(resultMinAndSec[1]) + 1).ToString()=="60")
+                {
+                    resultMinAndSec[0] = (Convert.ToInt32(resultMinAndSec[0]) + 1).ToString();
+                    resultMinAndSec[1] = "00";
+                    endurance_result = resultMinAndSec[0] + "." + resultMinAndSec[1];
+                    IsChekResultNull();
+                    return;
+                }
                 endurance_result = resultMinAndSec[0]+"."+(Convert.ToInt32(resultMinAndSec[1])+1).ToString();
                 IsChekResultNull();
             }
