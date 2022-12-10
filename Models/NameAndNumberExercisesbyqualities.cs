@@ -6,9 +6,6 @@ namespace TestWPF.Models
 {
     public static class NameAndNumberExercisesbyqualities
     {
-        public static int ForeceNumberExercises=2;
-        public static int SpeedNumberExercises=1;
-        public static int EnduranceNumberExercises=2;
 
         #region Force
         private static List<Name_Exercises> _ForceExercisesNameAndNumber = new List<Name_Exercises>()

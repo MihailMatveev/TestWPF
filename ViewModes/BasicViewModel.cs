@@ -58,7 +58,7 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref force_result, value);
-                Force_Ball = DateWork.ForceSearchBall(force_result);
+                Force_Ball = DateWork.ForceSearchBall(force_result,SelectedForce);
             }
         }
 
@@ -69,7 +69,7 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref speed_result, value);
-                Speed_Ball = DateWork.SearchBall(speed_result);
+                Speed_Ball = DateWork.SpeedSearchBall(speed_result,SelectedSpeed);
             }
         }
 
@@ -80,7 +80,8 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref endurance_result, value);
-                Endurance_Ball = DateWork.SearchBall(endurance_result);
+                IsChekResultNull();
+               // Endurance_Ball = DateWork.EnduranceSearchBall(endurance_result,SelectedEndurance);
             }
         }
 
@@ -132,6 +133,18 @@ namespace TestWPF.ViewModes
             }
         }
 
+        void IsChekResultNull()
+        {
+           if(DateWork.EnduranceSearchBall(endurance_result, SelectedEndurance) == null
+                || DateWork.EnduranceSearchBall(endurance_result, SelectedEndurance)=="")
+            {
+                string[] resultMinAndSec=endurance_result.Split('.');
+                endurance_result = resultMinAndSec[0]+"."+(Convert.ToInt32(resultMinAndSec[1])+1).ToString();
+                IsChekResultNull();
+            }
+            Endurance_Ball = DateWork.EnduranceSearchBall(endurance_result, SelectedEndurance);
+        }
+
         #endregion
         #region SelectedComboBox
         private int _SelectedForce=2;
@@ -139,11 +152,8 @@ namespace TestWPF.ViewModes
         public int SelectedForce
         {
             get { return _SelectedForce; }
-            set
-            {
-                Set(ref _SelectedForce, value);
-                NameAndNumberExercisesbyqualities.ForeceNumberExercises = value;
-            }
+            set=>Set(ref _SelectedForce, value);
+
         }
 
         private int _SelectedSpeed = 1;
@@ -151,10 +161,7 @@ namespace TestWPF.ViewModes
         public int SelectedSpeed
         {
             get { return _SelectedSpeed; }
-            set
-            {
-                Set(ref _SelectedSpeed, value);
-            }
+            set=>Set(ref _SelectedSpeed, value);
         }
 
         private int _SelectedEndurance = 2;
@@ -162,10 +169,7 @@ namespace TestWPF.ViewModes
         public int SelectedEndurance
         {
             get { return _SelectedEndurance; }
-            set
-            {
-                Set(ref _SelectedEndurance, value);
-            }
+            set=>Set(ref _SelectedEndurance, value);
         }
 
         #endregion

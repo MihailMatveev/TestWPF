@@ -50,11 +50,36 @@ namespace TestWPF.Data
         }
 
 
-        static public string ForceSearchBall(string result)
+        static public string ForceSearchBall(string result, int selectNumberExercises)
         {
             ConnectDate();
-            int selectNumber = NameAndNumberExercisesbyqualities.ForeceNumberExercises;
-            string sqlExpression = $"SELECT * FROM [NFP].[dbo].[№{NameAndNumberExercisesbyqualities.ForceExercisesNameAndNumber[selectNumber].Number}] WHERE Result={result}";
+
+            string sqlExpression = $"SELECT * FROM [NFP].[dbo].[№{NameAndNumberExercisesbyqualities.ForceExercisesNameAndNumber[selectNumberExercises].Number}] WHERE Result='{result}'";
+
+            SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+            string ball = Convert.ToString(command.ExecuteScalar());
+            connection.Close();
+            return ball;
+        }
+
+
+        static public string SpeedSearchBall(string result, int selectNumberExercises)
+        {
+            ConnectDate();
+            string sqlExpression = $"SELECT * FROM [NFP].[dbo].[№{NameAndNumberExercisesbyqualities.SpeedExercisesNameAndNumber[selectNumberExercises].Number}] WHERE Result='{result}'";
+
+            SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+            string ball = Convert.ToString(command.ExecuteScalar());
+            connection.Close();
+            return ball;
+        }
+
+        static public string EnduranceSearchBall(string result, int selectNumberExercises)
+        {
+            ConnectDate();
+            string sqlExpression = $"SELECT * FROM [NFP].[dbo].[№{NameAndNumberExercisesbyqualities.EnduranceExercisesNameAndNumber[selectNumberExercises].Number}] WHERE Result='{result}'";
 
             SqlCommand command = new SqlCommand(sqlExpression, connection);
 
