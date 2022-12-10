@@ -36,41 +36,40 @@ namespace TestWPF.Models
 
 
         #region Speed
-        private static Dictionary<string, string> _SpeedExercisesNameAndNumber = new Dictionary<string, string>()
+        private static List<Name_Exercises> _SpeedExercisesNameAndNumber = new List<Name_Exercises>()
         {
-            {"40","Бег на 60 м" },
-            {"41","Бег на 100 м" },
-            {"42","Челночный бег 10 х 10 м" },
-            {"43","Бег на 400 м" },
-            {"57","Плавание на 100 м вольным стилем" },
-            {"57(a)","Gлавание на 50 м вольным стилем" },
-            {"58","Плавание на 100 м способом брасс" },
+             new Name_Exercises() {Number="40",Name= "Бег на 60 м" },
+             new Name_Exercises() {Number="41",Name= "Бег на 100 м" },
+             new Name_Exercises() {Number="42",Name="Челночный бег 10 х 10 м" },
+             new Name_Exercises() {Number="43",Name= "Бег на 400 м" },
+             new Name_Exercises() {Number="57",Name="Плавание на 100 м вольным стилем" },
+             new Name_Exercises() {Number="57(a)",Name= "Gлавание на 50 м вольным стилем" },
+             new Name_Exercises() {Number="58",Name="Плавание на 100 м способом брасс" },
         };
 
         /// <summary>
         /// Название упражнений на БЫСТРОТУ. номер и название
         /// </summary>
-        public static Dictionary<string, string> SpeedExercisesNameAndNumber { get => _SpeedExercisesNameAndNumber; }
+        public static List<Name_Exercises> SpeedExercisesNameAndNumber { get => _SpeedExercisesNameAndNumber; }
         #endregion
 
         #region Endurance
-        private static Dictionary<string, string> _EnduranceExercisesNameAndNumber = new Dictionary<string, string>()
+        private static List<Name_Exercises> _EnduranceExercisesNameAndNumber = new List<Name_Exercises>()
         {
-            {"45(1)","Бег на 1 км \n до 35 лет" },
-            {"46(1)","Бег на 3 км \n до 35 лет" },
-            {"45(2)","Бег на 1 км \n свыше 35 лет" },
-            {"46(2)","Бег на 3 км \n свыше 35 лет" },
-
-            {"47","Бег на 5 км" },
-            {"48","Марш-бросок на 5 км"},
-            {"49","Марш-бросок на 10 км" },
-            {"53","Лыжная гонка на 5 км" },
+            new Name_Exercises() {Number="45(1)",Name="Бег на 1 км \n до 35 лет" },
+            new Name_Exercises() {Number="46(1)",Name="Бег на 3 км \n до 35 лет" },
+            new Name_Exercises() {Number="45(2)",Name="Бег на 1 км \n свыше 35 лет" },
+            new Name_Exercises() {Number="46(2)",Name="Бег на 3 км \n свыше 35 лет" },
+            new Name_Exercises() {Number="47",Name="Бег на 5 км" },
+            new Name_Exercises() {Number="48",Name="Марш-бросок на 5 км"},
+            new Name_Exercises() {Number="49",Name="Марш-бросок на 10 км" },
+            new Name_Exercises() {Number="53",Name="Лыжная гонка на 5 км" },
         };
 
         /// <summary>
         /// Название упражнений на ВЫНОСЛИВОСТЬ. номер и название
         /// </summary>
-        public static Dictionary<string, string> EnduranceExercisesNameAndNumber { get => _EnduranceExercisesNameAndNumber; }
+        public static List<Name_Exercises> EnduranceExercisesNameAndNumber { get => _EnduranceExercisesNameAndNumber; }
         #endregion
 
     }

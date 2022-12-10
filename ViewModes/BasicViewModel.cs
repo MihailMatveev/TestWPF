@@ -11,7 +11,7 @@ namespace TestWPF.ViewModes
 {
     public class BasicViewModel:ViewModes.Base.ViewModelBase
     {
-        private List<Name_Exercises> _Force =NameAndNumberExercisesbyqualities.ForceExercisesNameAndNumber;
+        private List<Name_Exercises> _Force =NameAndNumberExercisesbyqualities.ForceExercisesNameAndNumber.;
 
         public List<Name_Exercises> Force
         {
@@ -22,6 +22,31 @@ namespace TestWPF.ViewModes
             } 
                
         }
+
+        private List<Name_Exercises> _Speed = NameAndNumberExercisesbyqualities.SpeedExercisesNameAndNumber;
+
+        public List<Name_Exercises> Speed
+        {
+            get { return _Speed; }
+            set
+            {
+                Set(ref _Speed, value);
+            }
+
+        }
+
+        private List<Name_Exercises> _Endurance = NameAndNumberExercisesbyqualities.EnduranceExercisesNameAndNumber;
+
+        public List<Name_Exercises> Endurance
+        {
+            get { return _Endurance; }
+            set
+            {
+                Set(ref _Endurance, value);
+            }
+
+        }
+
         #region Fields
         #region result
 
