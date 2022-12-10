@@ -6,6 +6,10 @@ namespace TestWPF.Models
 {
     public static class NameAndNumberExercisesbyqualities
     {
+        public static int ForeceNumberExercises=2;
+        public static int SpeedNumberExercises=1;
+        public static int EnduranceNumberExercises=2;
+
         #region Force
         private static List<Name_Exercises> _ForceExercisesNameAndNumber = new List<Name_Exercises>()
         {
@@ -43,7 +47,7 @@ namespace TestWPF.Models
              new Name_Exercises() {Number="42",Name="Челночный бег 10 х 10 м" },
              new Name_Exercises() {Number="43",Name= "Бег на 400 м" },
              new Name_Exercises() {Number="57",Name="Плавание на 100 м вольным стилем" },
-             new Name_Exercises() {Number="57(a)",Name= "Gлавание на 50 м вольным стилем" },
+             new Name_Exercises() {Number="57(a)",Name= "Плавание на 50 м вольным стилем" },
              new Name_Exercises() {Number="58",Name="Плавание на 100 м способом брасс" },
         };
 

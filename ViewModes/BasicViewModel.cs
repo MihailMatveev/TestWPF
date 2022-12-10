@@ -11,6 +11,7 @@ namespace TestWPF.ViewModes
 {
     public class BasicViewModel:ViewModes.Base.ViewModelBase
     {
+        #region ComboBox
         private List<Name_Exercises> _Force =NameAndNumberExercisesbyqualities.ForceExercisesNameAndNumber;
 
         public List<Name_Exercises> Force
@@ -46,7 +47,7 @@ namespace TestWPF.ViewModes
             }
 
         }
-
+        #endregion
         #region Fields
         #region result
 
@@ -57,7 +58,7 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref force_result, value);
-                Force_Ball = DateWork.SearchBall(force_result);
+                Force_Ball = DateWork.ForceSearchBall(force_result);
             }
         }
 
@@ -93,7 +94,7 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref force_ball, value);
-                Sum_Ball += Convert.ToInt32(value);
+                Sum_Ball = Convert.ToInt32(endurance_ball) + Convert.ToInt32(speed_ball) + Convert.ToInt32(force_ball);
             }
 
         }
@@ -105,7 +106,7 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref speed_ball, value);
-                Sum_Ball+=Convert.ToInt32(value);
+                Sum_Ball = Convert.ToInt32(endurance_ball) + Convert.ToInt32(speed_ball) + Convert.ToInt32(force_ball);
             }
         }
 
@@ -116,7 +117,7 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref endurance_ball, value);
-                Sum_Ball += Convert.ToInt32(value);
+                Sum_Ball = Convert.ToInt32(endurance_ball) + Convert.ToInt32(speed_ball) + Convert.ToInt32(force_ball);
             }
         }
 
@@ -125,12 +126,50 @@ namespace TestWPF.ViewModes
         public int Sum_Ball
         {
             get { return sum_ball; }
-            set => Set(ref sum_ball, value);
+            set
+            {
+                Set(ref sum_ball, value);
+            }
+        }
+
+        #endregion
+        #region SelectedComboBox
+        private int _SelectedForce=2;
+
+        public int SelectedForce
+        {
+            get { return _SelectedForce; }
+            set
+            {
+                Set(ref _SelectedForce, value);
+                NameAndNumberExercisesbyqualities.ForeceNumberExercises = value;
+            }
+        }
+
+        private int _SelectedSpeed = 1;
+
+        public int SelectedSpeed
+        {
+            get { return _SelectedSpeed; }
+            set
+            {
+                Set(ref _SelectedSpeed, value);
+            }
+        }
+
+        private int _SelectedEndurance = 2;
+
+        public int SelectedEndurance
+        {
+            get { return _SelectedEndurance; }
+            set
+            {
+                Set(ref _SelectedEndurance, value);
+            }
         }
 
         #endregion
         #endregion
-
         #region Commands
         public ICommand CloseApplicationCommand { get; set; }
 

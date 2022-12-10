@@ -49,6 +49,20 @@ namespace TestWPF.Data
             return ball;
         }
 
+
+        static public string ForceSearchBall(string result)
+        {
+            ConnectDate();
+            int selectNumber = NameAndNumberExercisesbyqualities.ForeceNumberExercises;
+            string sqlExpression = $"SELECT * FROM [NFP].[dbo].[№{NameAndNumberExercisesbyqualities.ForceExercisesNameAndNumber[selectNumber].Number}] WHERE Result={result}";
+
+            SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+            string ball = Convert.ToString(command.ExecuteScalar());
+            connection.Close();
+            return ball;
+        }
+
         static public List<Name_Exercises> SearchName_Exercises()
         {
             List<Name_Exercises> name_Exercises = new List<Name_Exercises>();
