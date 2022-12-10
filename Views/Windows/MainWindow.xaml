@@ -21,15 +21,6 @@
         <vm:MainWindowViewModel/>
     </Window.DataContext>
 
-    <!--<Window.Resources>
-        <DataTemplate DataType="{x:Type vm:PersonalDataViewModel}">
-            <pages:PersonalDataView/>
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type vm:BasicViewModel}">
-            <pages:BasicView/>
-        </DataTemplate>
-    </Window.Resources>-->
     
 
     <Border CornerRadius="10"
