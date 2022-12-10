@@ -57,8 +57,8 @@ namespace TestWPF.Models
         private static List<Name_Exercises> _EnduranceExercisesNameAndNumber = new List<Name_Exercises>()
         {
             new Name_Exercises() {Number="45(1)",Name="Бег на 1 км \n до 35 лет" },
-            new Name_Exercises() {Number="46(1)",Name="Бег на 3 км \n до 35 лет" },
             new Name_Exercises() {Number="45(2)",Name="Бег на 1 км \n свыше 35 лет" },
+            new Name_Exercises() {Number="46(1)",Name="Бег на 3 км \n до 35 лет" },
             new Name_Exercises() {Number="46(2)",Name="Бег на 3 км \n свыше 35 лет" },
             new Name_Exercises() {Number="47",Name="Бег на 5 км" },
             new Name_Exercises() {Number="48",Name="Марш-бросок на 5 км"},
