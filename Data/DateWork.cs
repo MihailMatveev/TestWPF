@@ -4,10 +4,17 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Windows;
+using TestWPF.Infastructure.Base;
 using TestWPF.Models;
 
 namespace TestWPF.Data
 {
+    public enum ExercisesName
+    {
+        Force=1,
+        Speed=2,
+        Endurance
+    }
     public static class DateWork
     {
         static string  connectionString = "Server=(localdb)\\MSSQLLocalDB;Trusted_Connection=True;";
@@ -100,12 +107,12 @@ namespace TestWPF.Data
             {
                 while (reader.Read())
                 {
-                    name_Exercises.Add(new Name_Exercises()
+                   name_Exercises.Add( new Name_Exercises()
                     {
-                        Name = reader.GetString("name"),
-                        Number = reader.GetString("number")
+                        Number = reader.GetString("number"),
+                        Name = reader.GetString("name")
                     });
-                }
+                };
             }
             connection.Close();
                   
@@ -114,35 +121,58 @@ namespace TestWPF.Data
 
 
 
-        static public List<BallResultExercises> SearchBallExercises()
+        static public List<BallResultExercises> SearchBallExercises(ExercisesName exercises)
         {
-            List<Name_Exercises> name_Exercises = SearchName_Exercises();
+
             List<BallResultExercises> ball_result = new List<BallResultExercises>();
 
             ConnectDate();
-            foreach (var name in name_Exercises)
+            string nameExercises = null;
+
+
+            switch (exercises)
             {
-                ball_result.Add(new BallResultExercises());
-                string sqlExpression = $"SELECT * FROM [NFP].[dbo].[{name.Number.Trim()}] ";
-                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                case ExercisesName.Force:
+                    nameExercises = "AllBallResultForce";
+                    break;
+            }
 
-                using (SqlDataReader reader = command.ExecuteReader())
+
+
+            string sqlExpression = $"SELECT * FROM [NFP].[dbo].[{nameExercises}] ";
+            SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
                 {
+                    ball_result.Add(new BallResultExercises()
+                    {
+                        Ball = reader.GetInt32("Ball"),
+                        Result_1 = reader.GetString("Result_1"),
+                        Result_2 = reader.GetString("Result_2"),
+                        Result_4 = reader.GetString("Result_4"),
+                        Result_5 = reader.GetString("Result_5"),
+                        Result_6 = reader.GetString("Result_6"),
+                        Result_7 = reader.GetString("Result_7"),
+                        Result_8_1 = reader.GetString("Result_8_1"),
+                        Result_8_2 = reader.GetString("Result_8_2"),
+                        Result_9 = reader.GetString("Result_9"),
+                        Result_10 = reader.GetString("Result_10"),
+                        Result_11_1 = reader.GetString("Result_11_1"),
+                        Result_11_2 = reader.GetString("Result_11_2"),
+                        Result_12_1 = reader.GetString("Result_12_1"),
+                        Result_12_2 = reader.GetString("Result_12_2"),
+                        Result_13_1 = reader.GetString("Result_13_1"),
+                        Result_13_2 = reader.GetString("Result_13_2"),
+                    });
+                };
+            }
 
-                }
-               
-                
-            }
-            }
-           
             connection.Close();
 
             return ball_result;
         }
-
-
-
-
 
     }
 }
