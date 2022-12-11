@@ -111,5 +111,38 @@ namespace TestWPF.Data
                   
             return name_Exercises;
         }
+
+
+
+        static public List<BallResultExercises> SearchBallExercises()
+        {
+            List<Name_Exercises> name_Exercises = SearchName_Exercises();
+            List<BallResultExercises> ball_result = new List<BallResultExercises>();
+
+            ConnectDate();
+            foreach (var name in name_Exercises)
+            {
+                ball_result.Add(new BallResultExercises());
+                string sqlExpression = $"SELECT * FROM [NFP].[dbo].[{name.Number.Trim()}] ";
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+
+                }
+               
+                
+            }
+            }
+           
+            connection.Close();
+
+            return ball_result;
+        }
+
+
+
+
+
     }
 }

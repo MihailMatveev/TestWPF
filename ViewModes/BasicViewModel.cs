@@ -94,7 +94,8 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref force_ball, value);
-                Sum_Ball = Convert.ToInt32(endurance_ball) + Convert.ToInt32(speed_ball) + Convert.ToInt32(force_ball);
+                if(force_result != null)
+                 Sum_Ball = Convert.ToInt32(endurance_ball) + Convert.ToInt32(speed_ball) + Convert.ToInt32(force_ball);
             }
 
         }
@@ -106,7 +107,8 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref speed_ball, value);
-                Sum_Ball = Convert.ToInt32(endurance_ball) + Convert.ToInt32(speed_ball) + Convert.ToInt32(force_ball);
+                if (speed_result != null)
+                    Sum_Ball = Convert.ToInt32(endurance_ball) + Convert.ToInt32(speed_ball) + Convert.ToInt32(force_ball);
             }
         }
 
@@ -117,7 +119,8 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref endurance_ball, value);
-                Sum_Ball = Convert.ToInt32(endurance_ball) + Convert.ToInt32(speed_ball) + Convert.ToInt32(force_ball);
+                if (endurance_result != null)
+                    Sum_Ball = Convert.ToInt32(endurance_ball) + Convert.ToInt32(speed_ball) + Convert.ToInt32(force_ball);
             }
         }
 
@@ -134,6 +137,8 @@ namespace TestWPF.ViewModes
 
         void IsChekResultNull()
         {
+            if (endurance_result == null)
+                return;
            if(DateWork.EnduranceSearchBall(endurance_result, SelectedEndurance) == null
                 || DateWork.EnduranceSearchBall(endurance_result, SelectedEndurance)=="")
             {
