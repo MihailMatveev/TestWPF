@@ -80,8 +80,7 @@ namespace TestWPF.ViewModes
             set
             {
                 Set(ref endurance_result, value);
-                IsChekResultNull();
-               // Endurance_Ball = DateWork.EnduranceSearchBall(endurance_result,SelectedEndurance);
+                IsChekResultNull();            
             }
         }
 
@@ -160,7 +159,11 @@ namespace TestWPF.ViewModes
         public int SelectedForce
         {
             get { return _SelectedForce; }
-            set=>Set(ref _SelectedForce, value);
+            set
+            {
+                Set(ref _SelectedForce, value);
+                Force_Ball = DateWork.ForceSearchBall(force_result, SelectedForce);
+            }
 
         }
 
@@ -169,7 +172,11 @@ namespace TestWPF.ViewModes
         public int SelectedSpeed
         {
             get { return _SelectedSpeed; }
-            set=>Set(ref _SelectedSpeed, value);
+            set
+            {
+                Set(ref _SelectedSpeed, value);
+                Speed_Ball = DateWork.SpeedSearchBall(speed_result, SelectedSpeed);
+            }
         }
 
         private int _SelectedEndurance = 2;
@@ -177,7 +184,11 @@ namespace TestWPF.ViewModes
         public int SelectedEndurance
         {
             get { return _SelectedEndurance; }
-            set=>Set(ref _SelectedEndurance, value);
+            set
+            {
+                Set(ref _SelectedEndurance, value);
+                IsChekResultNull();
+            }
         }
 
         #endregion
