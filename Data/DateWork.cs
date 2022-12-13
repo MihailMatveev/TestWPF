@@ -170,7 +170,7 @@ namespace TestWPF.Data
             }
 
             connection.Close();
-
+            ball_result.Reverse();
             return ball_result;
         }
 
