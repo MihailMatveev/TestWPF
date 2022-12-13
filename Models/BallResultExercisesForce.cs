@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TestWPF.Models
 {
-    public class BallResultExercises
+    public class BallResultExercisesForce
     {
         public int Ball { get; set; }
         public string Result_1 { get; set; }

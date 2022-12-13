@@ -11,8 +11,8 @@ namespace TestWPF.ViewModes
 
 
 
-        private List<BallResultExercises> _BallResultForce = DateWork.SearchBallExercises(ExercisesName.Force);
-        public List<BallResultExercises> BallResultForce
+        private List<BallResultExercisesForce> _BallResultForce = DateWork.SearchBallExercisesForce();
+        public List<BallResultExercisesForce> BallResultForce
         {
             get { return _BallResultForce; }
             set
@@ -21,7 +21,28 @@ namespace TestWPF.ViewModes
             }
         }
 
-       
+
+        private List<BallResultExercisesSpeed> _BallResultSpeed = DateWork.SearchBallExercisesSpeed();
+        public List<BallResultExercisesSpeed> BallResultSpeed
+        {
+            get { return _BallResultSpeed; }
+            set
+            {
+                Set(ref _BallResultSpeed, value);
+            }
+        }
+
+
+        private List<BallResultExercisesEndurance> _BallResultEndurance = DateWork.SearchBallExercisesEndurance();
+        public List<BallResultExercisesEndurance> BallResultEndurance
+        {
+            get { return _BallResultEndurance; }
+            set
+            {
+                Set(ref _BallResultEndurance, value);
+            }
+        }
+
 
     }
 }

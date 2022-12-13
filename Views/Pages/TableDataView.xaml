@@ -18,6 +18,7 @@
     <Page.Resources>
         <Style TargetType="DataGridCell">
             <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Bold" />
         </Style>
     </Page.Resources>
 
@@ -25,10 +26,8 @@
         
         <TabItem Header="Начисление баллов">
 
-            <TabControl FontWeight="Bold" >
-
+            <TabControl >
                 <TabItem Header="Сила">
-
                     <DataGrid Background="#79CBEE" ItemsSource="{Binding Path=BallResultForce}" IsReadOnly="True" AutoGenerateColumns="False" FrozenColumnCount="1">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Баллы" Binding="{Binding Path=Ball}"/>
@@ -54,27 +53,30 @@
                 </TabItem>
 
                 <TabItem Header="Быстрота">
-                    <DataGrid Background="#79CBEE">
+                    <DataGrid Background="#79CBEE" ItemsSource="{Binding Path=BallResultSpeed}" IsReadOnly="True" AutoGenerateColumns="False" FrozenColumnCount="1">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Баллы"/>
-                            <DataGridTextColumn Width="*" Header="Бег на 60 м"/>
-                            <DataGridTextColumn Width="*" Header="Челночный бег 10 х 10 м"/>
-                            <DataGridTextColumn Width="*" Header="Бег на 100 м"/>
-                            <DataGridTextColumn Width="*" Header="Бег на 400 м"/>
-                            <DataGridTextColumn Width="*" Header="Бег 4 х 100 м"/>
+                            <DataGridTextColumn Header="Баллы" Binding="{Binding Path=Ball}"/>
+                            <DataGridTextColumn Header="Бег на 60 м" Binding="{Binding Path=Result_40}"/>
+                            <DataGridTextColumn Header="Бег на 100 м" Binding="{Binding Path=Result_41}"/>
+                            <DataGridTextColumn Header="Челночный бег 10 х 10 м" Binding="{Binding Path=Result_42}"/>
+                            <DataGridTextColumn Header="Бег на 400 м" Binding="{Binding Path=Result_43}"/>
+                            <DataGridTextColumn Header="Челночный бег 4 х 100 м" Binding="{Binding Path=Result_44}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
 
                 <TabItem Header="Выносливость">
-                    <DataGrid Background="#79CBEE">
+                    <DataGrid Background="#79CBEE" ItemsSource="{Binding Path=BallResultEndurance}" IsReadOnly="True" AutoGenerateColumns="False" FrozenColumnCount="1">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Баллы"/>
-                            <DataGridTextColumn Width="*" Header="Бег на 1 км"/>
-                            <DataGridTextColumn Width="*" Header="Бег на 3 км"/>
-                            <DataGridTextColumn Width="*" Header="Бег на  5 км"/>
-                            <DataGridTextColumn Width="*" Header="Марш-бросок на 5 км"/>
-                            <DataGridTextColumn Width="*" Header="Лыжная гонка на 5 км"/>
+                            <DataGridTextColumn Header="Баллы" Binding="{Binding Path=Ball}"/>
+                            <DataGridTextColumn Header="Бег на 1 км до 35 лет" Binding="{Binding Path=Result_45_1}"/>
+                            <DataGridTextColumn Header="Бег на 1 км свышу 35 лет" Binding="{Binding Path=Result_45_2}"/>
+                            <DataGridTextColumn Header="Бег на 3 км до 35 лет" Binding="{Binding Path=Result_46_1}"/>
+                            <DataGridTextColumn Header="Бег на 1 км свыше 35 лет" Binding="{Binding Path=Result_46_2}"/>
+                            <DataGridTextColumn Header="Бег на 5 км" Binding="{Binding Path=Result_47}"/>
+                            <DataGridTextColumn Header="Марш-бросок на 5 км" Binding="{Binding Path=Result_48}"/>
+                            <DataGridTextColumn Header="Лыжная гонка на 5 км" Binding="{Binding Path=Result_53}"/>
+                            <DataGridTextColumn Header="Плавание на 500 м вольным стилем" Binding="{Binding Path=Result_57_b}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>

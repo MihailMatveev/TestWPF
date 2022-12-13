@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Security.Policy;
 using System.Text;
 using System.Windows;
 using TestWPF.Infastructure.Base;
@@ -9,12 +10,7 @@ using TestWPF.Models;
 
 namespace TestWPF.Data
 {
-    public enum ExercisesName
-    {
-        Force=1,
-        Speed=2,
-        Endurance
-    }
+   
     public static class DateWork
     {
         static string  connectionString = "Server=(localdb)\\MSSQLLocalDB;Trusted_Connection=True;";
@@ -121,24 +117,14 @@ namespace TestWPF.Data
 
 
 
-        static public List<BallResultExercises> SearchBallExercises(ExercisesName exercises)
+        static public List<BallResultExercisesForce> SearchBallExercisesForce()
         {
-
-            List<BallResultExercises> ball_result = new List<BallResultExercises>();
+            string nameExercises = "AllBallResultForce";
+           
+            List<BallResultExercisesForce> ball_result = new List<BallResultExercisesForce>();
 
             ConnectDate();
-            string nameExercises = null;
-
-
-            switch (exercises)
-            {
-                case ExercisesName.Force:
-                    nameExercises = "AllBallResultForce";
-                    break;
-            }
-
-
-
+ 
             string sqlExpression = $"SELECT * FROM [NFP].[dbo].[{nameExercises}] ";
             SqlCommand command = new SqlCommand(sqlExpression, connection);
 
@@ -146,7 +132,7 @@ namespace TestWPF.Data
             {
                 while (reader.Read())
                 {
-                    ball_result.Add(new BallResultExercises()
+                    ball_result.Add(new BallResultExercisesForce()
                     {
                         Ball = reader.GetInt32("Ball"),
                         Result_1 = reader.GetString("Result_1"),
@@ -165,6 +151,77 @@ namespace TestWPF.Data
                         Result_12_2 = reader.GetString("Result_12_2"),
                         Result_13_1 = reader.GetString("Result_13_1"),
                         Result_13_2 = reader.GetString("Result_13_2"),
+                    });
+                };
+            }
+
+            connection.Close();
+            ball_result.Reverse();
+            return ball_result;
+        }
+
+
+
+        static public List<BallResultExercisesSpeed> SearchBallExercisesSpeed()
+        {
+            string nameExercises = "AllBallResultSpeed";
+
+
+            List<BallResultExercisesSpeed> ball_result = new List<BallResultExercisesSpeed>();
+
+            ConnectDate();
+
+            string sqlExpression = $"SELECT * FROM [NFP].[dbo].[{nameExercises}] ";
+            SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    ball_result.Add(new BallResultExercisesSpeed()
+                    {
+                        Ball = reader.GetInt32("Ball"),
+                        Result_40 = reader.GetString("Result_40"),
+                        Result_41 = reader.GetString("Result_41"),
+                        Result_42 = reader.GetString("Result_42"),
+                        Result_43 = reader.GetString("Result_43"),
+                        Result_44 = reader.GetString("Result_44"),         
+                    });
+                };
+            }
+
+            connection.Close();
+            ball_result.Reverse();
+            return ball_result;
+        }
+
+        static public List<BallResultExercisesEndurance> SearchBallExercisesEndurance()
+        {
+            string nameExercises = "AllBallResultEndurance";
+
+
+            List<BallResultExercisesEndurance> ball_result = new List<BallResultExercisesEndurance>();
+
+            ConnectDate();
+
+            string sqlExpression = $"SELECT * FROM [NFP].[dbo].[{nameExercises}] ";
+            SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    ball_result.Add(new BallResultExercisesEndurance()
+                    {
+                        Ball = reader.GetInt32("Ball"),
+                        Result_45_1 = reader.GetString("Result_45_1"),
+                        Result_45_2 = reader.GetString("Result_45_2"),
+                        Result_46_1 = reader.GetString("Result_46_1"),
+                        Result_46_2 = reader.GetString("Result_46_2"),
+                        Result_47 = reader.GetString("Result_47"),
+                        Result_48 = reader.GetString("Result_48"),
+                        Result_53 = reader.GetString("Result_53"),
+                        Result_57_b = reader.GetString("Result_57_b"),
                     });
                 };
             }
