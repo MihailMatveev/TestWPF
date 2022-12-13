@@ -8,7 +8,7 @@ namespace TestWPF.ViewModes
 {
     public class SettingVIewModel:ViewModes.Base.ViewModelBase
     {
-        private List<CategoryMillitary> category;
+        private List<CategoryMillitary> category=DateWork.SearchCategory();
 
         public List<CategoryMillitary> Category
         {
@@ -19,9 +19,17 @@ namespace TestWPF.ViewModes
             }
         }
 
-        public SettingVIewModel()
+
+        private int _SelectedCategory=6;
+
+        public int SelectedFCategory
         {
-            
+            get { return _SelectedCategory; }
+            set
+            {
+                Set(ref _SelectedCategory, value);
+            }
+
         }
     }
 }

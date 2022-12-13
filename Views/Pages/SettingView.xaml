@@ -72,16 +72,19 @@
                         <TextBox Width="400" Background="LightBlue" 
                                  Opacity="0.8" TextAlignment="Left" 
                                  FontSize="25" Foreground="Black" Margin="10"/>
+                        
                         <ComboBox Width="400" Background="LightBlue" 
                                  Opacity="0.8" ItemsSource="{Binding Path=Category}"
-                                 FontSize="25" Foreground="Black" Margin="10">
+                                 FontSize="25" Foreground="Black" Margin="10"
+                                  SelectedIndex="{Binding SelectedFCategory}">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Name}"/>
+                                    <TextBlock Text="{Binding Name}" FontSize="13"/>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
 
+                        
                         <DatePicker Width="400" Background="LightBlue" 
                                  Opacity="0.8" 
                                  FontSize="25" Foreground="Black" Margin="10"/>

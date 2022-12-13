@@ -20,14 +20,14 @@
         
         <TabItem Header="Начисление баллов">
 
-            <TabControl >
+            <TabControl FontWeight="Bold" >
 
                 <TabItem Header="Сила">
                     <DataGrid Background="#79CBEE" ItemsSource="{Binding Path=Number_1}">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Баллы" Binding="{Binding Path=Ball}"/>
                             <DataGridTextColumn Header="Подтягивание на перекладине" Binding="{Binding Path=Result}"/>
-                            <DataGridTextColumn Header="Подъем переворотом на перекладине" Binding="{Binding}"/>
+                            <DataGridTextColumn Header="Подъем переворотом на перекладине" Binding="{Binding Path=Result}"/>
                             <DataGridTextColumn Header="Сгибание и разгибание рук в упоре лежа"/>
                             <DataGridTextColumn Header="Наклоны туловища вперед"/>
                         </DataGrid.Columns>

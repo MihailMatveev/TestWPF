@@ -174,5 +174,29 @@ namespace TestWPF.Data
             return ball_result;
         }
 
+
+        static public List<CategoryMillitary> SearchCategory()
+        {
+            List<CategoryMillitary> category = new List<CategoryMillitary>(); 
+
+            ConnectDate();
+            string sqlExpression = $"SELECT * FROM [NFP].[dbo].[CategoryMillitary]";
+            SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    category.Add(new CategoryMillitary()
+                    {
+                        Number = reader.GetString("Number").Trim(),
+                        Name = reader.GetString("Name").Replace("\r\n", string.Empty)
+                });
+                };
+            }
+            connection.Close();
+
+            return category;
+        }
     }
 }
