@@ -74,7 +74,7 @@
                              IsChecked="True">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Основаная" Style="{StaticResource menuButtonText}"/>
+                        <TextBlock Text="Основная" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
 
