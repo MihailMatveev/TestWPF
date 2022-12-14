@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace TestWPF.Views.Pages
 {
@@ -18,6 +19,7 @@ namespace TestWPF.Views.Pages
     /// </summary>
     public partial class MethodologyView : Page
     {
+        
         public MethodologyView()
         {
             InitializeComponent();

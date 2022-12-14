@@ -22,9 +22,7 @@
             <TabControl >
 
                 <TabItem Header="Гимнастика">
-                    <DataGrid Background="#79CBEE">
-                        
-                    </DataGrid>
+
                 </TabItem>
 
                 <TabItem Header="Легкая атлетика">
